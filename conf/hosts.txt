@@ -1,0 +1,6 @@
+# Lista de hosts (uno por línea)
+# Comentarios con # se ignoran
+# Formato: user@hostname o solo hostname
+# localhost
+# ejemplo: user@192.168.1.10
+192.168.88.10

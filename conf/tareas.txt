@@ -1,0 +1,4 @@
+ls -l
+echo "hola" > /tmp/pepe.txt
+cat /tmp/pepe.txt
+ls -l /tmp/pepe.txt

@@ -1,0 +1,25 @@
+#!/bin/bash
+# kitty_remote - Launcher script that activates venv and runs the Python program
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+VENV_DIR="$SCRIPT_DIR/venv"
+PYTHON_SCRIPT="$SCRIPT_DIR/kitty_remote.py"
+
+# Check if virtual environment exists
+if [ ! -d "$VENV_DIR" ]; then
+    echo "Error: Virtual environment not found at $VENV_DIR"
+    echo "Create it with: python3 -m venv venv"
+    exit 1
+fi
+
+# Check if Python script exists
+if [ ! -f "$PYTHON_SCRIPT" ]; then
+    echo "Error: Python script not found at $PYTHON_SCRIPT"
+    exit 1
+fi
+
+# Activate virtual environment
+source "$VENV_DIR/bin/activate"
+
+# Run the Python script with all arguments
+python "$PYTHON_SCRIPT" "$@"
