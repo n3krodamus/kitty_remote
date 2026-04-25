@@ -1,5 +1,4 @@
 name: opencode
-
 on:
   issue_comment:
     types: [created]
@@ -14,9 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       id-token: write
-      contents: write
-      pull-requests: write
-      issues: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -26,8 +22,5 @@ jobs:
 
       - name: Run OpenCode
         uses: anomalyco/opencode/github@latest
-        env:
-          ZEN_API_KEY: ${{ secrets.ZEN_API_KEY }}
         with:
-          model: opencode/chat
-          # share: true
+          model: opencode/zen
