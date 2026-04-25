@@ -13,6 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       id-token: write
+      contents: read
+      issues: write
+      pull-requests: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -24,3 +27,4 @@ jobs:
         uses: anomalyco/opencode/github@latest
         with:
           model: "opencode/minimax-m2.5-free"
+          github_token: true
