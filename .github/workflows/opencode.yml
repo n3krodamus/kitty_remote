@@ -25,6 +25,8 @@ jobs:
 
       - name: Run OpenCode
         uses: anomalyco/opencode/github@latest
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         with:
           model: "opencode/minimax-m2.5-free"
           github_token: true
